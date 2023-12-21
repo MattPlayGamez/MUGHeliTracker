@@ -2,3 +2,4 @@
 .venv/*
 configuration.json
 index.py
+test.py
