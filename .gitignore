@@ -1,5 +1,5 @@
 .venv
 .venv/*
 configuration.json
-index.py
+index.pyw
 test.py
