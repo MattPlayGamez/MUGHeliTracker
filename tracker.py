@@ -16,6 +16,7 @@ radius = None
 vehicle_to_track = None
 topic = None
 landing_radius = None
+MILESTOKM=1.609344
 
 print('app started')
 
@@ -90,7 +91,7 @@ def TrackTillLanding(registration):
                     # Check of de helikopter is geland
                     if aircraft.altitude <= 60:
                         google_maps = f"https://www.google.com/maps?q={aircraft.latitude},{aircraft.longitude}"
-                        afstand_van_thuis = getDistanceFromTwoCoords(self_latitude, self_longitude, aircraft.latitude, aircraft.longitude)
+                        afstand_van_thuis = (getDistanceFromTwoCoords(self_latitude, self_longitude, aircraft.latitude, aircraft.longitude))*MILESTOKM
                         data = {
                             "topic": topic,
                             "message": f"**MUG Heli is geland op {afstand_van_thuis}km ** \n",
@@ -121,7 +122,7 @@ def GetMugHeli():
             print(aircraft)
             latitude = aircraft.latitude
             longitude = aircraft.longitude
-            speed = round(aircraft.ground_speed * 1.609344, 0)
+            speed = round(aircraft.ground_speed * MILESTOKM, 0)
             google_maps = f"https://www.google.com/maps?q={latitude},{longitude}"
             altitude = round(aircraft.altitude * 0.3048, 0)
             data = {
