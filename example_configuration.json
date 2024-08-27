@@ -1,5 +1,8 @@
 {
-  "latitude": 14,
-  "longitude": 3,
-  "radius": 5000
+  "latitude": 50.9525979,
+  "longitude": -2.3999164,
+  "radius": 1000,
+  "landing_radius": 5000,
+  "registration": "G-DSAA",
+  "NTFYtopic": "somerandomalert"
 }
