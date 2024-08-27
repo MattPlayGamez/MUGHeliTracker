@@ -17,6 +17,8 @@ vehicle_to_track = None
 topic = None
 landing_radius = None
 
+print('app started')
+
 with open(path2json, 'r') as file:
     data = json.load(file)
     self_latitude = data["latitude"]
